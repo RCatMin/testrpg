@@ -2,7 +2,7 @@ package units;
 
 import controlManage.IOControl;
 
-public class Monster {
+public abstract class Monster {
 
 	int hp; // 체력
 	int maxHp; // 최대 체력
