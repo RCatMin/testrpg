@@ -25,12 +25,18 @@ public abstract class Monster {
 	public Monster (int maxHp, int power, String type) {
 		this.hp = maxHp;
 		this.maxHp = maxHp;
+		this.power = power;
 		this.type = type;
 	}
 	
 	
 	public void attack (Unit target) {
-		
+		target.hp -= (power - target.def);
+		IOControl.printString("[" + target.name + "] 이(가)" + (power - target.def) + "의 데미지를 입었습니다.");
+		if (target.hp <= 0) {
+			IOControl.printString("[" + target.name + "] 이(가)" + " 처치되었습니다.");
+			target.hp = 0;
+		}
 	}
 	
 	public void printMonster() {
