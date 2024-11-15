@@ -2,7 +2,7 @@ package units;
 
 import controlManage.IOControl;
 
-public class Player {
+public class Player extends Unit{
 
 	String name; // 이름
 	int level; // 레벨
@@ -17,29 +17,12 @@ public class Player {
 
 	}
 
-	public Player(String name, int level, int hp, int maxHp, int att, int def, int exp) {
-		this.name = name;
-		this.level = level;
-		this.hp = hp;
-		this.maxHp = maxHp;
-		this.att = att;
-		this.def = def;
-		this.exp = exp;
+	public Player(String name, int level, int maxHp, int att, int def, int exp) {
+		super (name, level, maxHp, att, def, exp);
 	}
 
-	public Player(String name, int level, int hp, int maxHp, int att, int def, int exp, boolean party) {
-		this.name = name;
-		this.level = level;
-		this.hp = hp;
-		this.maxHp = maxHp;
-		this.att = att;
-		this.def = def;
-		this.exp = exp;
-		this.party = party;
-	}
-
-	public void attack (Monster target) {
-		
+	public Player(String name, int level, int maxHp, int att, int def, int exp, boolean party) {
+		super (name, level, maxHp, att, def, exp, party);
 	}
 	
 	public void printPlayer() {
