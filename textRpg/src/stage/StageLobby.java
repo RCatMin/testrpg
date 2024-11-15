@@ -9,7 +9,7 @@ public class StageLobby {
 	
 	Map <String, Stage> stageMenu;
 	
-	public void StageLobby() {
+	public StageLobby() {
 		stageMenu = new HashMap <String, Stage>();
 		stageMenu.put("전투", new StageBattle());
 		stageMenu.put("길드", new StageGuild());
