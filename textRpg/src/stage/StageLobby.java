@@ -17,7 +17,7 @@ public class StageLobby {
 		stageMenu.put("인벤토리", new StageInventory());
 	}
 	
-	public void menu() {
+	public boolean activate() {
 		printMenu();
 		while(true) {			
 			String input = IOControl.inputString("\n여기에 입력하세요 : ");
@@ -30,6 +30,7 @@ public class StageLobby {
 				break;
 			}
 		}
+		return false;
 	}
 	
 	public void printMenu() {
