@@ -1,10 +1,14 @@
 package textRpg;
 
 import controlManage.IOControl;
+import stage.StageLobby;
 
 public class GameManager {
+	private StageLobby lobby;
+	private boolean isRun = true;
+	
 	private GameManager() {
-		
+		this.lobby = new StageLobby();
 	}
 	
 	private static GameManager instance = new GameManager();
@@ -17,9 +21,13 @@ public class GameManager {
 		start();
 		String input = IOControl.inputString("\n여기에 입력하세요 : ");
 		if (input.equals("시작")) {
-			
-		} else {
+			isRun = lobby.activate();
+		} else if (input.equals("종료")){
 			end();
+			isRun = false;
+		}
+		
+		if (isRun = false) {
 			return;
 		}
 	}
